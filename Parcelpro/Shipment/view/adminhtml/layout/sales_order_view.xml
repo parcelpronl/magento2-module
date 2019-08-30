@@ -1,0 +1,35 @@
+<!--<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">-->
+    <!--<body>-->
+        <!--<referenceContainer name="left">-->
+            <!--<referenceBlock name="sales_order_tabs">-->
+                <!--<action method="addTab">-->
+                    <!--<argument name="name" xsi:type="string">Parcelpro_Shipment</argument>-->
+                    <!--<argument name="block" xsi:type="string">Parcelpro\Shipment\Block\Adminhtml\Order\View\Tab\Custom</argument>-->
+                <!--</action>-->
+            <!--</referenceBlock>-->
+        <!--</referenceContainer>-->
+    <!--</body>-->
+<!--</page>-->
+
+<!--<referenceBlock name="sales_order_tabs">-->
+<!--<block class="Parcelpro\Shipment\Block\Adminhtml\Order\View\Tab\Custom" name="new.tab.grid.container">-->
+    <!--<argument name="priority" xsi:type="string">100</argument>-->
+<!--</block>-->
+<!--<action method="addTabAfter">-->
+    <!--<argument name="name" xsi:type="string">tab_name</argument>-->
+    <!--<argument name="block" xsi:type="string">new.tab.grid.container</argument>-->
+    <!--<argument name="after" xsi:type="string">order_info</argument>-->
+<!--</action>-->
+<!--</referenceBlock>-->
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<body>
+    <referenceBlock name="sales_order_tabs">
+        <block class="Parcelpro\Shipment\Block\Adminhtml\Order\View\Tab\Custom" name="parcelpro_shipment.grid.container"/>
+        <action method="addTab">
+            <argument name="name" xsi:type="string">parcelpro_shipment</argument>
+            <argument name="block" xsi:type="string">parcelpro_shipment.grid.container</argument>
+        </action>
+    </referenceBlock>
+</body>
+</page>

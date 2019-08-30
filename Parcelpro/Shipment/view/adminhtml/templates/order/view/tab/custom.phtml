@@ -1,0 +1,33 @@
+<?php $res = $block->currentValues(); ?>
+<section class="custom-tab-content">
+    <h1>Pakket Opties</h1>
+</section>
+<?php if($res["reeds_aangemeld"]){ ?>
+    <div id="messages"><div class="messages"><div class="message message-warning warning"><div data-ui-id="messages-message-warning">De zending is reeds aangemeld bij ParcelPro.</div></div></div></div>
+<?php } ?>
+<form class="form" action="<?= /* @escapeNotVerified */ $block->getSaveUrl() ?>" method="post" enctype="multipart/form-data">
+    <input name="form_key" type="hidden" value="<?php echo $block->getFormKey() ?>">
+    <input type="hidden" name="pp[order_id]" value="<?php echo $res["order_id"]; ?>">
+    <div class="admin__field">
+        <label for="verzendmethode" class="admin__field-label">Verzendmethode</label>
+        <div class="admin__field-control">
+            <select name="pp[verzendmethode]" id="verzendmethode" class="admin__control-select">
+                <option value="" selected> Kies een verzendmethode </option>
+                <?php foreach($block->shippingOptions() as $k => $v){
+                    if(isset($res["custom_shipping_method"]) && $res["custom_shipping_method"] == $k){
+                        echo '<option value="'.$k.'" selected>'.$v.'</option>';
+                    }else{
+                        echo '<option value="'.$k.'">'.$v.'</option>';
+                    }
+                } ?>
+            </select>
+        </div>
+    </div>
+    <div class="admin__field">
+        <label for="aantalPakketten" class="admin__field-label">Aantal pakketten</label>
+        <div class="admin__field-control">
+            <input type="text" name="pp[aantalPakketten]" class="admin__control-text" id="aantalPakketten" placeholder="1" value="<?php echo $res["aantal_pakketten"]; ?>">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Opslaan</button>
+</form>

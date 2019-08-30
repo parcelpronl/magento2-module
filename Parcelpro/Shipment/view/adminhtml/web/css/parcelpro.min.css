@@ -1,0 +1,17 @@
+#carriers_parcelpro td , #carriers_parcelpro td {
+    display: block;
+    width: 100%;
+}
+#carriers_parcelpro td.label{
+    text-align:left;
+}
+
+#carriers_parcelpro td table.admin__control-table td{
+    display: table-cell;
+    width: auto;
+}
+.admin__field:not(.admin__field-option)>.admin__field-label span[data-config-scope]:before, .accordion .config .label span[data-config-scope]:before{
+    position:relative !important;
+    margin-right: 5px;
+    bottom: 0 !important;
+}

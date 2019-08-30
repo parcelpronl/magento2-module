@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <carriers>
+            <parcelpro>
+                <active>1</active>
+                <title>ParcelPro</title>
+                <sallowspecific>0</sallowspecific>
+                <model>Parcelpro\Shipment\Model\Carrier\Parcelpro</model>
+                <auto>Automatisch aanmelden</auto>
+                <postnl_title>PostNL versturen via parcelpro.nl</postnl_title>
+                <dhl_title>DHL versturen via parcelpro.nl</dhl_title>
+                <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
+            </parcelpro>
+        </carriers>
+    </default>
+</config>

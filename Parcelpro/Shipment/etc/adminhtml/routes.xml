@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/App/etc/routes.xsd">
+    <router id="admin">
+        <route id="pp_shipment" frontName="pp_shipment">
+            <module name="Parcelpro_Shipment" />
+        </route>
+        <route id="customtab" frontName="customtab">
+            <module name="Parcelpro_Shipment" />
+        </route>
+    </router>
+</config>

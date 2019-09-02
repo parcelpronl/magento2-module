@@ -11,7 +11,7 @@
   "type": "magento2-module",
   "version": "2.8.0",
   "license": [
-    "OSL-3.0",
+    "OSL-3.0"
   ],
   "authors": [
     {

@@ -150,8 +150,12 @@ define(
             quoteIsVirtual: quote.isVirtual(),
 
             initialize: function () {
-                var self = this;
+              var self = this,
+                  hasNewAddress,
+                  fieldsetName = 'checkout.steps.shipping-step.shippingAddress.shipping-address-fieldset';
+
                 this._super();
+
                 if (!quote.isVirtual()) {
                     stepNavigator.registerStep(
                         'shipping',
@@ -164,8 +168,8 @@ define(
                 checkoutDataResolver.resolveShippingAddress();
 
 
-                var hasNewAddress = addressList.some(function (address) {
-                    return address.getType() == 'new-customer-address';
+                hasNewAddress = addressList.some(function (address) {
+                    return address.getType() == 'new-customer-address'; //eslint-disable-line eqeqeq
                 });
 
                 this.isNewAddressAdded(hasNewAddress);
@@ -312,7 +316,7 @@ define(
                 }
                 if(shippingMethod.method_code =="dhl_parcelshop"){
                     jQuery('#modal').show();
-                    jQuery('#afhaalpunt_frame').attr('src', ParcelProKiezerUrl() + '&carrier=PostNL');
+                    jQuery('#afhaalpunt_frame').attr('src', ParcelProKiezerUrl() + '&carrier=DHL');
                 }
                 return true;
             },

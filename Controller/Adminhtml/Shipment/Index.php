@@ -1,6 +1,7 @@
 <?php
 namespace Parcelpro\Shipment\Controller\Adminhtml\Shipment;
 
+use Magento\Framework\Setup\Exception;
 use Parcelpro\Shipment\Model\ParcelproFactory;
 /**
  * Responsible for loading page content.
@@ -30,10 +31,11 @@ class Index extends \Magento\Backend\App\Action{
         parent::__construct($context);
     }
 
-    public function execute()
-    {
+    public function execute() {
         $order_id = $this->getRequest()->getParam('order_id');
+        if(!$order_id) $order_id = $this->getRequest()->getParam('selected');
 
+        $message = null;
         if(is_null($order_id)){
             $objectManager =  \Magento\Framework\App\ObjectManager::getInstance();
             $collectionFactory = $objectManager->create('Magento\Catalog\Model\ResourceModel\Product\CollectionFactory');
@@ -45,17 +47,28 @@ class Index extends \Magento\Backend\App\Action{
             $collection = $filter->getCollection($collectionFactory->create());
 
             foreach ($collection->getItems() as $order) {
-                if (!in_array($order->getId(), $result)) $this->postToParcelPro($order->getId());
+                if (!in_array($order->getId(), $result)) $message = $this->postToParcelPro($order->getId());
             }
         }else{
-            if($order_id) $this->postToParcelPro($order_id);
+            if($order_id){
+                if(is_array($order_id)){
+                    foreach($order_id as $k => $v) {
+                        $message .= $this->postToParcelPro($v);
+                        $message .= "<br>";
+                    }
+                }else {
+                    $message = $this->postToParcelPro($order_id);
+                }
+            }
         }
 
+        if(!$message) $this->messageManager->addError(__('Er is een fout opgetreden, probeer opnieuw'));
+        if($message) $this->messageManager->addNotice(__($message));
         $this->_redirect($this->_redirect->getRefererUrl());
     }
 
 
-    public function postToParcelPro($order_id){
+    public function postToParcelPro($order_id) {
         try{
             $objectManager =  \Magento\Framework\App\ObjectManager::getInstance();
             $order = $objectManager->create('Magento\Sales\Model\Order')->load($order_id);
@@ -159,9 +172,9 @@ class Index extends \Magento\Backend\App\Action{
             $parcelproModel->setData($data);
             $parcelproModel->save();
 
-            $this->messageManager->addSuccess(__('De zending is succesvol aangemeld bij ParcelPro.'));
+            return sprintf("Order %s succesvol aangemaakt", $order_id);
         }catch(\Magento\Framework\Exception\LocalizedException $e){
-            $this->messageManager->addError(__('De zending niet succesvol aangemeld bij ParcelPro.'));
+            return sprintf("Order %s geeft een error", $order_id);
         }
 
     }

@@ -14,7 +14,22 @@ Bij vragen kunt u contact opnemen via https://www.parcelpro.nl/over-ons/
 
 == Changelog ==
 
-## V.2.7.0 - 2018-10-18
+## V.2.8.1 - 2019-09-18
+
+#### Fixes
+
+- Afdrukken en aanmelden van zendingen(batch)
+- Status aanpassen na afdrukken
+
+
+## V.2.8.0 - 2019-08-30
+
+#### Nieuwe functionaliteiten
+
+- Installeren vanuit Git
+- Firecheckout ondersteuning.
+
+## V.2.7.0 - 2018-11-13
 
 #### Nieuwe functionaliteiten
 

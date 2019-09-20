@@ -10,7 +10,7 @@ var config = {
             ** FireCheckout ondersteuning
             ** Onderstaande regel activeren zodat gekozen pakketpunt opgeslagen wordt bij de order.
             */
-            ,"Magento_Checkout/js/action/set-shipping-information":"Parcelpro_Shipment/js/action/set-shipping-information"
+            //,"Magento_Checkout/js/action/set-shipping-information":"Parcelpro_Shipment/js/action/set-shipping-information"
         }
     }
 };

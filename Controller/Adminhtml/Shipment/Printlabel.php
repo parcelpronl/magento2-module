@@ -73,7 +73,7 @@ class Printlabel extends \Magento\Backend\App\Action{
         }
 
         if($message) $this->messageManager->addNotice(__($message));
-        $this->_redirect($this->_redirect->getRefererUrl());
+        //$this->_redirect($this->_redirect->getRefererUrl());
     }
 
 

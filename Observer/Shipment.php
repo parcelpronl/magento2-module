@@ -10,16 +10,19 @@ class Shipment implements ObserverInterface {
     protected $logger;
     protected $scopeConfig;
     protected $_modelParcelproFactory;
+    protected $serialize;
     protected $url = 'https://login.parcelpro.nl';
 
     public function __construct(
         \Psr\Log\LoggerInterface $loggerInterface,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
-        ParcelproFactory $modelParcelproFactory
+        ParcelproFactory $modelParcelproFactory,
+        \Magento\Framework\Serialize\Serializer\Json $serialize
     ) {
         $this->logger = $loggerInterface;
         $this->scopeConfig = $scopeConfig;
         $this->_modelParcelproFactory = $modelParcelproFactory;
+        $this->serialize = $serialize;
     }
 
     public function execute( \Magento\Framework\Event\Observer $observer ) {
@@ -152,7 +155,7 @@ class Shipment implements ObserverInterface {
             $pieces = explode("custom_pricerule_", $pieces[1]);
 
             $config = $this->scopeConfig->getValue('carriers/parcelpro', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
-            $pricerules = unserialize($config["custom_pricerule"]);
+            $pricerules = $this->serialize->unserialize($config["custom_pricerule"]);
 
             if($pricerules){
                 $counter = 0;

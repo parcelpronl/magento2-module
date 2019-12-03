@@ -9,7 +9,7 @@
                     <tooltip>
                         <![CDATA[Versie van onze plug-in]]>
                     </tooltip>
-                    <comment>2.8.1</comment>
+                    <comment>2.8.2</comment>
                 </field>
                 <field id="active" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Enabled</label>

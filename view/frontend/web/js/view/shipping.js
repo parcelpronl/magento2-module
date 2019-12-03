@@ -56,6 +56,7 @@ define(
         'use strict';
 
         var popUp = null;
+        var locatiekiezerHost = "https://login.parcelpro.nl";
         function ParcelProKiezerUrl() {
             var postcode = null;
             var street = null;
@@ -86,12 +87,12 @@ define(
                 street = jQuery('input[name^=street]').first().val();
             }
 
-            var url = "https://login.parcelpro.nl/plugin/afhaalpunt/parcelpro-kiezer.html";
+            var url = locatiekiezerHost + "/plugin/afhaalpunt/parcelpro-kiezer.html";
             url += "?";
             url += "id=" + window.checkoutConfig.config.gebruikerID;
             url += "&postcode=" + postcode;
             url += "&adres=" + street
-            url += "&origin=" + window.location.protocol + "//" + window.location.hostname +":8888";
+            url += "&origin=" + window.location.protocol + "//" + window.location.hostname;
             return url;
         }
 
@@ -202,7 +203,7 @@ define(
                 });
 
                 window.addEventListener("message", function (event) {
-                    if (event.origin === "https://login.parcelpro.nl") {
+                    if (event.origin === locatiekiezerHost) {
                         var msg = event.data;
                         if (msg == "closewindow") {
                             popup_close();
@@ -211,7 +212,7 @@ define(
                             popup_close();
                         }
                     } else {
-                        console.log(event.origin + "!== https://login.parcelpro.nl");
+                        console.log(event.origin + "!== " + locatiekiezerHost);
                     }
                 }, false);
 

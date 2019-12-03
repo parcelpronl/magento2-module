@@ -14,6 +14,13 @@ Bij vragen kunt u contact opnemen via https://www.parcelpro.nl/over-ons/
 
 == Changelog ==
 
+## V.2.8.2 - 2019-12-03
+
+#### Fixes
+
+- Poort uit de locatiekiezer
+- Gebruik unserialize van Magento
+
 ## V.2.8.1 - 2019-09-18
 
 #### Fixes

@@ -14,6 +14,11 @@ Bij vragen kunt u contact opnemen via https://www.parcelpro.nl/over-ons/
 
 == Changelog ==
 
+## V.2.8.3 - 2020-03-12
+
+#### Fixes
+- HTTP -> HTTPS aangepast voor verbeterde beveiligingsmaatregelen.
+
 ## V.2.8.2 - 2019-12-03
 
 #### Fixes

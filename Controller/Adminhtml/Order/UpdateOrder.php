@@ -15,7 +15,7 @@ class UpdateOrder extends \Magento\Backend\App\Action {
     protected $pageFactory;
     protected $scopeConfig;
     protected $_modelParcelproFactory;
-    protected $url = 'http://login.parcelpro.nl';
+    protected $url = 'https://login.parcelpro.nl';
 
     public function __construct(
         \Magento\Backend\App\Action\Context $context,

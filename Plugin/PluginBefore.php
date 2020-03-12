@@ -5,7 +5,7 @@ use Parcelpro\Shipment\Model\ParcelproFactory;
 
 class PluginBefore
 {
-    protected $_url = 'http://login.parcelpro.nl';
+    protected $_url = 'https://login.parcelpro.nl';
 
     public function beforePushButtons(
         \Magento\Backend\Block\Widget\Button\Toolbar\Interceptor $subject,

@@ -17,7 +17,7 @@ class Printlabel extends \Magento\Backend\App\Action{
     protected $orderConverter;
     protected $transactionFactory;
     protected $shipmentSender;
-    protected $url = 'http://login.parcelpro.nl';
+    protected $url = 'https://login.parcelpro.nl';
 
     public function __construct(
         \Magento\Backend\App\Action\Context $context,

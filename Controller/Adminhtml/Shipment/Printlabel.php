@@ -97,9 +97,10 @@ class Printlabel extends \Magento\Backend\App\Action{
                 }else{
                     $url = (!empty($url) ? $url : '');
                     echo "<script>";
-                    echo "var win = window.open('$this->url$labelURL&PrintPdf=true.$url');";
+                    echo "var win = window.open('$this->url$labelURL&PrintPdf=true$url');";
+                    echo "if(!win){ this.location = ('$this->url$labelURL&PrintPdf=true$url') }";
                     echo "var timer = setInterval(function() {";
-                    echo "if(win.closed) { ";
+                    echo "if(!win || win.closed) { ";
                     echo "clearInterval(timer);";
                     echo "location.href = '" . $this->_redirect->getRefererUrl() . "'";
                     echo "}";

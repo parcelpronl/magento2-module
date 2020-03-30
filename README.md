@@ -10,6 +10,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Parcel Pro heeft een module ontwikkeld die geinstalleerd kan worden in de backoffice van Magento. Hiermee kunt u heel gemakkelijk orders inladen in ons verzendsysteem. Dit zorgt ervoor dat het verzendproces efficiënter wordt en het helpt u bij het verwerken van meerdere orders en zendingen.
 
 De handleiding is te vinden op https://www.parcelpro.nl/koppelingen/magento
+Deze repository zal geplaats moeten worden in uw app/code/Parcelpro/Shipment directory geplaatst moeten worden. 
+
 Bij vragen kunt u contact opnemen via https://www.parcelpro.nl/over-ons/
 
 == Changelog ==

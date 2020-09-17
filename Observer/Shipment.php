@@ -29,16 +29,16 @@ class Shipment implements ObserverInterface {
         try{
             $objectManager =  \Magento\Framework\App\ObjectManager::getInstance();
 
-            $config = $this->scopeConfig->getValue('carriers/parcelpro', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+            $order = $observer->getEvent()->getOrder();
+            if(!$order){
+                $shipment = $observer->getEvent()->getShipment();
+                $order = $shipment->getOrder();
+                $order->getState();
+            }
+
+            $config = $this->scopeConfig->getValue('carriers/parcelpro', \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
 
             if ($config["auto"]) {
-                $order = $observer->getEvent()->getOrder();
-                if(!$order){
-                    $shipment = $observer->getEvent()->getShipment();
-                    $order = $shipment->getOrder();
-                    $order->getState();
-                }
-
 
                 $collection = $objectManager->create('Parcelpro\Shipment\Model\Resource\Parcelpro\CollectionFactory');
                 $collection = $collection->create()->addFieldToFilter('order_id', $order->getIncrementId())->getFirstItem();
@@ -51,7 +51,7 @@ class Shipment implements ObserverInterface {
                         $order_id = $order->getIncrementId();
                         $data = $order->getData();
 
-                        $shipping_method = $this->getShippingMethod($order->getShippingMethod());
+                        $shipping_method = $this->getShippingMethod($order->getShippingMethod(), $order);
                         if ($shipping_method) {
                             $data["custom_shipping_method"] = $shipping_method;
                         }
@@ -148,13 +148,13 @@ class Shipment implements ObserverInterface {
         }
     }
 
-    public function getShippingMethod($key){
+    public function getShippingMethod($key, $order){
         if (strpos($key, 'custom_pricerule') !== false) {
 
             $pieces = explode("parcelpro_", $key);
             $pieces = explode("custom_pricerule_", $pieces[1]);
 
-            $config = $this->scopeConfig->getValue('carriers/parcelpro', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+            $config = $this->scopeConfig->getValue('carriers/parcelpro', \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
             $pricerules = $this->serialize->unserialize($config["custom_pricerule"]);
 
             if($pricerules){

@@ -90,7 +90,7 @@ class Printlabel extends \Magento\Backend\App\Action{
             $labelURL = $result["label_url"];
 
             try {
-                $this->changeState($orderId);
+                $this->changeState($orderId, $order);
 
                 if($multiple){
                     return $result['zending_id'];
@@ -115,11 +115,11 @@ class Printlabel extends \Magento\Backend\App\Action{
         }
     }
 
-    public function changeState($orderId){
+    public function changeState($orderId, $order){
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $order = $objectManager->create('\Magento\Sales\Model\Order') ->load($orderId);
 
-        $config = $this->scopeConfig->getValue('carriers/parcelpro', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        $config = $this->scopeConfig->getValue('carriers/parcelpro', \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
 
         if($config["afdrukken_status"]) {
             $state = $this->defineOrderStateConstant($config["afdrukken_status"]);

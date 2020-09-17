@@ -66,7 +66,7 @@ class UpdateOrder extends \Magento\Backend\App\Action {
                 // Verzendmethode opslaan in de order.
                 $shipping_option = $this->scopeConfig->getValue(
                     sprintf('carriers/parcelpro/%s',$data["verzendmethode"]),
-                    \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+                    \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
 
                 if($shipping_option == "[]"){
                     $parcelpro = $objectManager->create('\Parcelpro\Shipment\Model\Carrier\Parcelpro');
@@ -80,8 +80,6 @@ class UpdateOrder extends \Magento\Backend\App\Action {
                     $serialized = $serialize->unserialize($shipping_option);
                     $shipping_description = $serialized[key($serialized)]["titel"];
                 }
-
-                $config = $this->scopeConfig->getValue('carriers/parcelpro', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 
                 $order->setShippingMethod("parcelpro_".$data["verzendmethode"]);
                 $order->setShippingDescription($shipping_description);

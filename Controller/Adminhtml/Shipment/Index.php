@@ -75,13 +75,13 @@ class Index extends \Magento\Backend\App\Action{
             $order_id = $order->getIncrementId();
             $data = $order->getData();
 
-            $config = $this->scopeConfig->getValue('carriers/parcelpro', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+            $config = $this->scopeConfig->getValue('carriers/parcelpro', \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
 
             $collection = $objectManager->create('Parcelpro\Shipment\Model\Resource\Parcelpro\CollectionFactory');
             $collection = $collection->create()->addFieldToFilter('order_id', $order->getIncrementId())->getFirstItem();
             $pp_result = $collection->getData();
 
-            $shipping_method = $this->getShippingMethod($order->getShippingMethod());
+            $shipping_method = $this->getShippingMethod($order->getShippingMethod(), $order);
 
             if($shipping_method){
                 $data["custom_shipping_method"] = $shipping_method;
@@ -113,7 +113,7 @@ class Index extends \Magento\Backend\App\Action{
 
             $json = json_encode($data);
 
-            $config = $this->scopeConfig->getValue('carriers/parcelpro', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+            $config = $this->scopeConfig->getValue('carriers/parcelpro', \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
             $gebruikerid = $config["gebruiker_id"];
             $apikey = $config["api_key"];
 
@@ -179,13 +179,13 @@ class Index extends \Magento\Backend\App\Action{
 
     }
 
-    public function getShippingMethod($key){
+    public function getShippingMethod($key, $order){
         if (strpos($key, 'custom_pricerule') !== false) {
 
             $pieces = explode("parcelpro_", $key);
             $pieces = explode("custom_pricerule_", $pieces[1]);
 
-            $config = $this->scopeConfig->getValue('carriers/parcelpro', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+            $config = $this->scopeConfig->getValue('carriers/parcelpro', \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
             $pricerules = $this->serialize->unserialize($config["custom_pricerule"]);
 
             if($pricerules){

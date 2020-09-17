@@ -1,7 +1,7 @@
 === Parcel Pro ===
 Tags: Shipping, Verzending, Pakketten, PostNL, DHL, DPD, UPS, GLS, Multi Carrier, Shops United Parcel Pro, Parcelpro
 Requires at least: Magento 2.x
-Tested up to: 2.2.5
+Tested up to: 2.4.0
 Stable tag: 1.7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -10,11 +10,19 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Parcel Pro heeft een module ontwikkeld die geinstalleerd kan worden in de backoffice van Magento. Hiermee kunt u heel gemakkelijk orders inladen in ons verzendsysteem. Dit zorgt ervoor dat het verzendproces efficiënter wordt en het helpt u bij het verwerken van meerdere orders en zendingen.
 
 De handleiding is te vinden op https://www.parcelpro.nl/koppelingen/magento
-Deze repository zal geplaats moeten worden in uw app/code/Parcelpro/Shipment directory geplaatst moeten worden. 
+Deze repository zal geplaats moeten worden in uw app/code/Parcelpro/Shipment directory geplaatst moeten worden.
 
 Bij vragen kunt u contact opnemen via https://www.parcelpro.nl/over-ons/
 
 == Changelog ==
+
+## V.2.9.0- 2020-09-17
+
+#### Fixes
+- Locatiekiezer pop-up op mobiel scherm
+- Straat en huisnummer doorgeven.
+- Multi store config fixes
+
 
 ## V.2.8.3 - 2020-03-12
 

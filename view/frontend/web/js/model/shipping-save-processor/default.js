@@ -40,8 +40,9 @@ define(
                         quote.shippingAddress().company = jQuery("#shipping_method\\:company").val();
                         quote.shippingAddress().firstname = jQuery("#shipping_method\\:firstname").val();
                         quote.shippingAddress().lastname = jQuery("#shipping_method\\:lastname").val();
-                        var shippingstreet = jQuery("#shipping_method\\:street1").val() +" "+ jQuery("#shipping_method\\:street2").val();
-                        quote.shippingAddress().street = [shippingstreet];
+                        var street = jQuery("#shipping_method\\:street1").val();
+                        var number = jQuery("#shipping_method\\:street2").val();
+                        quote.shippingAddress().street = [street, number];
                         quote.shippingAddress().postcode = jQuery("#shipping_method\\:postcode").val();
                         quote.shippingAddress().city = jQuery("#shipping_method\\:city").val();
                         quote.shippingAddress().customerAddressId = null;

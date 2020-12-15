@@ -200,6 +200,7 @@ define(
                     checkoutProvider.on('shippingAddress', function (shippingAddressData) {
                         checkoutData.setShippingAddressFromData(shippingAddressData);
                     });
+                    shippingRatesValidator.initFields(fieldsetName);
                 });
 
                 window.addEventListener("message", function (event) {

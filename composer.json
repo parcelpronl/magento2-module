@@ -1,5 +1,5 @@
 {
-  "name": "Parcelpro/Shipment",
+  "name": "parcelpro/shipment",
   "description": "Verzendmodule om gemakkelijk orders in te laden in het verzendsysteem van Parcel Pro.",
   "keywords": [
     "verzenden",
@@ -9,8 +9,6 @@
     "dhl"
   ],
   "type": "magento2-module",
-  "version": "2.8.3",
-  "php": "~5.5.0|~5.6.0|~7.0.0|7.0.2|7.0.4|~7.0.6|~7.1.0|~7.2.10|~7.3.9|~7.4.2",
   "license": [
     "OSL-3.0"
   ],
@@ -22,6 +20,9 @@
       "role": "Developer"
     }
   ],
+  "require": {
+      "php": "^7.1"
+  },
   "autoload": {
     "files": [ "registration.php" ],
     "psr-4": {

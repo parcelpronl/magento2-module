@@ -139,7 +139,10 @@ define(
 
         return Component.extend({
             defaults: {
-                template: 'Parcelpro_Shipment/shipping'
+                template: 'Parcelpro_Shipment/shipping',
+                shippingFormTemplate: 'Magento_Checkout/shipping-address/form',
+                shippingMethodListTemplate: 'Magento_Checkout/shipping-address/shipping-method-list',
+                shippingMethodItemTemplate: 'Magento_Checkout/shipping-address/shipping-method-item'
             },
             visible: ko.observable(!quote.isVirtual()),
             errorValidationMessage: ko.observable(false),

@@ -185,6 +185,7 @@ class Custom extends \Magento\Backend\Block\Template implements \Magento\Backend
             $pricerules = $this->serialize->unserialize($pricerules);
             foreach ($pricerules as $pricerule) {
                 $carriers["custom_pricerule_".$counter] = $pricerule["titel"];
+                $counter++;
             }
             unset($carriers["custom_pricerule"]);
         }

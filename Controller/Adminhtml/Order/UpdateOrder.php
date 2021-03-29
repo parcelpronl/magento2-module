@@ -68,7 +68,7 @@ class UpdateOrder extends \Magento\Backend\App\Action {
                     sprintf('carriers/parcelpro/%s',$data["verzendmethode"]),
                     \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
 
-                if($shipping_option == "[]"){
+                if(!$shipping_option || $shipping_option == "[]" ){
                     $parcelpro = $objectManager->create('\Parcelpro\Shipment\Model\Carrier\Parcelpro');
                     foreach($parcelpro->getAllowedMethods() as $k => $v){
                         $parts = explode("_", $k);

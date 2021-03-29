@@ -16,6 +16,17 @@ Bij vragen kunt u contact opnemen via https://www.parcelpro.nl/over-ons/
 
 == Changelog ==
 
+## V.2.11.0- 2021-03-29
+#### Nieuwe functionaliteiten
+- Bij orders kunnen nu individuele verzendmethodes gekozen uit de custom regels en opgeslagen worden.
+#### Fixes
+- Verzendmethodes worden nu beter gelaten aan de hand van de commit van Tjitse-E.
+- Lowercase composer.json aan de hand van meerdere requests. 
+
+## V.2.10.0- 2020-09-17
+#### Fixes
+- Storeview aanpassing
+
 ## V.2.9.0- 2020-09-17
 
 #### Fixes

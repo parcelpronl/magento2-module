@@ -11,162 +11,162 @@
                     </tooltip>
                     <comment>2.9.0</comment>
                 </field>
-                <field id="active" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="active" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Enabled</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="sallowspecific" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="sallowspecific" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Ship to Applicable Countries</label>
                     <frontend_class>shipping-applicable-country</frontend_class>
                     <source_model>Magento\Shipping\Model\Config\Source\Allspecificcountries</source_model>
                 </field>
-                <field id="specificcountry" translate="label" type="multiselect" sortOrder="91" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="91" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Ship to Specific Countries</label>
                     <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
                     <can_be_empty>1</can_be_empty>
                 </field>
-                <field id="showmethod" translate="label" type="select" sortOrder="92" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="showmethod" translate="label" type="select" sortOrder="92" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Show Method if Not Applicable</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="gebruiker_id" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="gebruiker_id" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Gebruiker id</label>
                     <tooltip>
                         <![CDATA[Uw accountnummer van het verzendsysteem, te vinden bij uw account!]]>
                     </tooltip>
                 </field>
-                <field id="api_key" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="api_key" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Api Key</label>
                     <tooltip>
                         <![CDATA[Uw api key van het verzendsysteem, te vinden bij uw accountinstellingen!]]>
                     </tooltip>
                 </field>
-                <field id="auto" translate="label" type="select" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="auto" translate="label" type="select" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Automatisch aanmelden</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="auto_status" translate="label" type="select" sortOrder="121" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="auto_status" translate="label" type="select" sortOrder="121" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Automatisch aanmelden na status</label>
                     <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
                     <can_be_empty>1</can_be_empty>
                 </field>
-                <field id="afdrukken_status" translate="label" type="select" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="afdrukken_status" translate="label" type="select" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Status na afdrukken label</label>
                     <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
                     <can_be_empty>1</can_be_empty>
                 </field>
-                <field id="price_incl" translate="label" type="select" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="price_incl" translate="label" type="select" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Totaal prijs inclusief BTW (checkout)</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="postnl_title" translate="label comment tooltip" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="postnl_title" translate="label comment tooltip" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>PostNL versturen via parcelpro.nl</label>
                 </field>
-                <field id="postnl_afleveradres" translate="label comment tooltip" sortOrder="210" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="postnl_afleveradres" translate="label comment tooltip" sortOrder="210" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>PostNL Afleveradres</label>
                     <frontend_model>Parcelpro\Shipment\Block\Adminhtml\System\Config\Form\Field\Countriesmap</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
                 </field>
-                <field id="postnl_pakjegemak" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="postnl_pakjegemak" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>PostNL Pakjegemak</label>
                     <frontend_model>Parcelpro\Shipment\Block\Adminhtml\System\Config\Form\Field\Countriesmap</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
                 </field>
-                <field id="postnl_nbb" translate="label" type="text" sortOrder="230" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="postnl_nbb" translate="label" type="text" sortOrder="230" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>PostNL Alleen Huisadres</label>
                     <frontend_model>Parcelpro\Shipment\Block\Adminhtml\System\Config\Form\Field\Countriesmap</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
                 </field>
-                <field id="postnl_hvo" translate="label" type="text" sortOrder="240" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="postnl_hvo" translate="label" type="text" sortOrder="240" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>PostNL Handtekening</label>
                     <frontend_model>Parcelpro\Shipment\Block\Adminhtml\System\Config\Form\Field\Countriesmap</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
                 </field>
-                <field id="postnl_or" translate="label" type="text" sortOrder="250" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="postnl_or" translate="label" type="text" sortOrder="250" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>PostNL onder Rembours</label>
                     <frontend_model>Parcelpro\Shipment\Block\Adminhtml\System\Config\Form\Field\Countriesmap</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
                 </field>
-                <field id="postnl_vb" translate="label" type="text" sortOrder="260" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="postnl_vb" translate="label" type="text" sortOrder="260" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>PostNL Verzekerd bedrag</label>
                     <frontend_model>Parcelpro\Shipment\Block\Adminhtml\System\Config\Form\Field\Countriesmap</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
                 </field>
-                <field id="postnl_bp" translate="label" type="text" sortOrder="270" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="postnl_bp" translate="label" type="text" sortOrder="270" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>PostNL Brievenbuspakje</label>
                     <frontend_model>Parcelpro\Shipment\Block\Adminhtml\System\Config\Form\Field\Countriesmap</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
                 </field>
-                <field id="postnl_pricerule" translate="label comment tooltip" sortOrder="280" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="postnl_pricerule" translate="label comment tooltip" sortOrder="280" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>PostNL Buitenland</label>
                     <frontend_model>Parcelpro\Shipment\Block\Adminhtml\System\Config\Form\Field\Countriesmap</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
                     <tooltip>Prijsregel(s) voor buitenlandse zendingen</tooltip>
                 </field>
-                <field id="dhl_title" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="dhl_title" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>DHL versturen via parcelpro.nl</label>
                 </field>
-                <field id="dhl_afleveradres" translate="label" type="text" sortOrder="310" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="dhl_afleveradres" translate="label" type="text" sortOrder="310" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>DHL Afleveradres</label>
                     <frontend_model>Parcelpro\Shipment\Block\Adminhtml\System\Config\Form\Field\Countriesmap</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
                 </field>
-                <field id="dhl_parcelshop" translate="label" type="text" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="dhl_parcelshop" translate="label" type="text" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>DHL Parcelshop</label>
                     <frontend_model>Parcelpro\Shipment\Block\Adminhtml\System\Config\Form\Field\Countriesmap</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
                 </field>
-                <field id="dhl_nbb" translate="label" type="text" sortOrder="330" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="dhl_nbb" translate="label" type="text" sortOrder="330" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>DHL Niet bij buren</label>
                     <frontend_model>Parcelpro\Shipment\Block\Adminhtml\System\Config\Form\Field\Countriesmap</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
                 </field>
-                <field id="dhl_hvo" translate="label" type="text" sortOrder="340" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="dhl_hvo" translate="label" type="text" sortOrder="340" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>DHL Handtekening</label>
                     <frontend_model>Parcelpro\Shipment\Block\Adminhtml\System\Config\Form\Field\Countriesmap</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
                 </field>
-                <field id="dhl_ez" translate="label" type="text" sortOrder="350" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="dhl_ez" translate="label" type="text" sortOrder="350" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>DHL Extra zeker</label>
                     <frontend_model>Parcelpro\Shipment\Block\Adminhtml\System\Config\Form\Field\Countriesmap</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
                 </field>
-                <field id="dhl_eve" translate="label" type="text" sortOrder="360" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="dhl_eve" translate="label" type="text" sortOrder="360" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>DHL Avondlevering</label>
                     <frontend_model>Parcelpro\Shipment\Block\Adminhtml\System\Config\Form\Field\Countriesmap</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
                 </field>
-                <field id="dhl_bp" translate="label" type="text" sortOrder="370" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="dhl_bp" translate="label" type="text" sortOrder="370" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>DHL Brievenbuspakje</label>
                     <frontend_model>Parcelpro\Shipment\Block\Adminhtml\System\Config\Form\Field\Countriesmap</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
                 </field>
-                <field id="dhl_pricerule" translate="label comment tooltip" sortOrder="380" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="dhl_pricerule" translate="label comment tooltip" sortOrder="380" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>DHL Buitenland</label>
                     <frontend_model>Parcelpro\Shipment\Block\Adminhtml\System\Config\Form\Field\Countriesmap</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
                     <tooltip>Prijsregel(s) voor buitenlandse zendingen</tooltip>
                 </field>
-                <field id="vsp_title" translate="label" type="text" sortOrder="400" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="vsp_title" translate="label" type="text" sortOrder="400" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Briefpost versturen via parcelpro.nl</label>
                 </field>
-                <field id="vsp_bp" translate="label" type="text" sortOrder="410" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="vsp_bp" translate="label" type="text" sortOrder="410" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Brievenbuspakje</label>
                     <frontend_model>Parcelpro\Shipment\Block\Adminhtml\System\Config\Form\Field\Countriesmap</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
                 </field>
-                <field id="sameday_title" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="sameday_title" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>SameDay versturen via parcelpro.nl</label>
                 </field>
-                <field id="sameday_dc" translate="label" type="text" sortOrder="510" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="sameday_dc" translate="label" type="text" sortOrder="510" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Sameday</label>
                     <frontend_model>Parcelpro\Shipment\Block\Adminhtml\System\Config\Form\Field\Countriesmap</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
                 </field>
-                <field id="custom_title" translate="label" type="text" sortOrder="600" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="custom_title" translate="label" type="text" sortOrder="600" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Eigen verzendopties via parcelpro.nl</label>
                 </field>
-                <field id="custom_pricerule" translate="label comment tooltip" sortOrder="610" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="custom_pricerule" translate="label comment tooltip" sortOrder="610" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Eigen verzendopties</label>
                     <frontend_model>Parcelpro\Shipment\Block\Adminhtml\System\Config\Form\Field\CustomRowOne</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>

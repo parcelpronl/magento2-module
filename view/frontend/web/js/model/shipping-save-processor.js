@@ -6,7 +6,7 @@
 /*global define*/
 define(
     [
-        '../model/shipping-save-processor/default'
+        './shipping-save-processor/default'
     ],
     function(defaultProcessor) {
         'use strict';

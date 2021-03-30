@@ -334,11 +334,13 @@ define(
             },
 
             validateShippingInformation: function () {
-                if (quote.shippingMethod().method_code == "postnl_pakjegemak" || quote.shippingMethod().method_code == "dhl_parcelshop") {
-                    if (jQuery("#shipping_method\\:company").val() === "") {
-                        this.errorValidationMessage('Selecteer een afhaallocatie of een andere verzendmethode');
-                        return false;
-                    }
+                if(quote.shippingMethod()){
+                  if (quote.shippingMethod().method_code == "postnl_pakjegemak" || quote.shippingMethod().method_code == "dhl_parcelshop") {
+                      if (jQuery("#shipping_method\\:company").val() === "") {
+                          this.errorValidationMessage('Selecteer een afhaallocatie of een andere verzendmethode');
+                          return false;
+                      }
+                  }
                 }
 
                 var shippingAddress,

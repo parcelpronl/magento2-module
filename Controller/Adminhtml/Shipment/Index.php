@@ -168,9 +168,17 @@ class Index extends \Magento\Backend\App\Action{
 
             $data = ['zending_id' => $response_body['Id'], 'order_id' => $order_id, 'barcode' => $response_body['Barcode'], 'carrier' => $carrier, 'url' => $response_body['TrackingUrl'], 'label_url' => $response_body['LabelUrl']];
 
+
+            $collection = $objectManager->create('Parcelpro\Shipment\Model\Resource\Parcelpro\CollectionFactory');
+            $collection = $collection->create()->addFieldToFilter('order_id', $order_id)->getFirstItem();
+
+            $result = $collection->getData();
+            if($result && isset($result['id']))$data['id']=$result['id'];
+
             $parcelproModel = $this->_modelParcelproFactory->create();
             $parcelproModel->setData($data);
             $parcelproModel->save();
+
 
             return sprintf("Order %s succesvol aangemaakt", $order_id);
         }catch(\Magento\Framework\Exception\LocalizedException $e){

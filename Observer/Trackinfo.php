@@ -34,7 +34,7 @@ class Trackinfo implements ObserverInterface {
 
         $result = $collection->getData();
 
-        if($result && !is_null($result['barcode'])){
+        if($result && !is_null($result['barcode']) && !is_null($result['result'])){
             $shipment->setZendingId($result['zending_id']);
 
             $track = $objectManager->create('Magento\Sales\Model\Order\Shipment\Track');

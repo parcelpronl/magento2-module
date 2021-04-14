@@ -169,6 +169,7 @@ class Custom extends \Magento\Backend\Block\Template implements \Magento\Backend
         $carriers = [];
 
         foreach($this->_parcelpro->getAllowedMethods() as $k => $v){
+            if(!$this->_parcelpro->getConfigData($k) || $this->_parcelpro->getConfigData($k) == "[]")continue;
             $parts = explode("_", $k);
             if(strtolower($v) == 'pricerule') $v = 'Buitenland';
 
